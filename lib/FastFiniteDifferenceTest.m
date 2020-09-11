@@ -79,13 +79,13 @@ if(PlottingOn)
         title('Individual 2nd order errors');
         legend(num2str((1:nx*nx*nf)'), 'location', 'northwest');
     end
+    
+    figure;
+    clf;
+    loglog(epsilon, etotdf, '-bx'); hold on
+    loglog(epsilon, etotd2f, '-ro'); hold off
+    xlabel('\epsilon')
+    ylabel('||(x - xFD)./xFD||');
+    legend('1st der.', '2nd der.','location','northwest');
+    title('Total errors');
 end
-
-figure;
-clf;
-loglog(epsilon, etotdf, '-bx'); hold on
-loglog(epsilon, etotd2f, '-ro'); hold off
-xlabel('\epsilon')
-ylabel('||(x - xFD)./xFD||');
-legend('1st der.', '2nd der.','location','northwest');
-title('Total errors');
