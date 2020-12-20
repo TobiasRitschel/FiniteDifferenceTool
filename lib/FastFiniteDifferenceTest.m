@@ -42,7 +42,7 @@ for i = 1:NoTests
     edf(i,:) = ErrorFunction(tmp(:), dfFD(:));
     
     % Detect zero derivatives
-    idx = abs(dfFD(:)) > sqrt(eps);
+    idx = (abs(tmp(:)) > sqrt(eps)) & (abs(dfFD(:)) > sqrt(eps));
     
     % Sum error of nonzero derivatives
     etotdf(i) = norm(edf(i,idx));
