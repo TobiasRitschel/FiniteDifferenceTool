@@ -27,7 +27,7 @@ NoTests = length(epsilon);
 etotdf = zeros(NoTests, 1);
 etotd2f = zeros(NoTests, 1);
 edf = zeros(NoTests, nx*nf);
-ed2f = zeros(NoTests, nx*nx*nf);
+if(nout > 2), ed2f = zeros(NoTests, nx*nx*nf); end
 for i = 1:NoTests
     % Approximate derivatives
     [dfFD, d2fFD] = FiniteDifferenceDerivatives(fun, x, epsilon(i), varargin{:});
