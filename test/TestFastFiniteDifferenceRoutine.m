@@ -19,4 +19,4 @@ epsilon = 10.^(linspace(-8, 2, NoTests));
 ErrorFunction = @(df, dfFD) abs(df(:) - dfFD(:)) ./ (1 + abs(dfFD(:)));
 
 % Carry out finite difference test
-FiniteDifferenceTest(fun, x, epsilon, true, ErrorFunction);
+FastFiniteDifferenceTest(fun, x, epsilon, true, ErrorFunction);

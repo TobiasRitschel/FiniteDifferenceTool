@@ -13,10 +13,10 @@ x = [1; 2];
 
 % Finite differences
 NoTests = 1e2;
-epsilon = 10.^(linspace(-8, 2, NoTests));
+epsilon = 10.^(linspace(-323, 2, NoTests));
 
 % Error function
 ErrorFunction = @(df, dfFD) abs(df(:) - dfFD(:)) ./ (1 + abs(dfFD(:)));
 
 % Carry out finite difference test
-FiniteDifferenceTest(fun, x, epsilon, true, ErrorFunction);
+edf = ComplexStepTest(fun, x, epsilon, true, ErrorFunction);
