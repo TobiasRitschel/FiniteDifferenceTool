@@ -11,6 +11,7 @@ function dfFD = ComplexStepDerivatives(fun, x, epsilon, varargin)
 % 
 % LINKS
 % [A] https://mdolab.engin.umich.edu/wiki/guide-complex-step-derivative-approximation
+% [B] https://faculty.math.illinois.edu/~hirani/cbmg/precision.html#:~:text=The%20smallest%20representable%20number%20in,than%201.1102230246316%C3%9710%E2%88%9216.
 
 % Evaluate function
 f = feval(fun, x, varargin{:});
